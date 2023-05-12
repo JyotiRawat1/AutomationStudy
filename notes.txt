@@ -1,0 +1,437 @@
+5th - Primitive / non primitive data type
+    - Class is a custom data type
+    - Object as refrence 
+    - String
+*********************************************************
+
+6th - if else
+      if{
+        }else if{
+                }
+
+    - Loop
+
+      For(initialization or declaration;condition ;increment/decrement){}
+                 Step 1      Step 2                        Step 4
+      For(int counter = 0 ; counter <= 5 ; count = counter +1 or count +){
+                                                              Step 3
+                                                                         }
+          >> C++ post inrement after use of c , ++C pre inrement before use of C
+
+      While
+      initialization 
+      while(condition){
+          Any sop statment
+           incement
+
+             }
+
+        int i = 0;
+        while(i<=5){
+        sop 
+        i++
+                   }
+     
+        Do while
+        int c;
+        do{
+           sop
+            i++
+           }while(c<1);
+         
+
+       -Switch
+         switch(a){
+          case 1:
+                 syp("one");
+                 break;
+          case 2:
+                 syp("two");
+                 break;
+          default:
+                 syp("value not matched")
+                  }
+
+
+
+       -Array (we can point mitiple homogenious value with one ref) save memory
+        int arr[] = new arr[3];
+        arr[0]=1;
+        arr[1]=2;
+        arr[2]=3;
+
+
+       -Main funtion explained
+
+******************************************************************************************
+
+7th   - throws Exception
+
+           
+
+           Try Catch 
+         
+             try{
+                }catch(arthmatic execption e){
+                  syo();
+                   }
+
+
+
+
+             try{
+             }catch(Execption e){
+                  syo();
+                                }Finally{   // chalega hi chalega 
+                    file= null; 
+                     }
+
+       - Multidimintion array
+       - Collection 
+              List - allow duplicate values
+              Set - Did not allow duplicate values
+              -Autogrow concept in collection   Size will be as per requirement no need to give size as in array its free size 
+               -More organized 
+     
+     
+*********************************************************************************************************************
+
+8th    - try catch and throws 
+          extends class name (to get the fuctions on other third class )
+        - public class MyCal extends Cal (Cal class is parent of MyCal class and Mycal class can now use functions of Cal class)
+*********************************
+          Cal   Cal1 = new MyCal()
+                
+          Parent           Child
+
+*********************************
+  1:07            - collection 
+             set do not have any get function 
+             list have get function 
+              mylist.get(2)    
+               crud(create read update delete
+              create on list = mylist.add(5);
+              update on list = mylist.add(2,5); it will add new index in b/w and size of list will increase
+               1:16
+                                        index  , value 
+              read on list = itr.next();(will move one step) 
+              Iterator itr = myList.iterator();
+              itr.hasnext();   (it will check the next value)   
+
+              while(itr.hasnext()){
+                    itr.next();
+                                   }
+
+*******************************************************************************************************************************************
+
+9th 1.1 - Inheritance  : extends Child will be able to access all pulic function on parent
+                       : Fux Protected child and same pck class will be able to use this type of function of parent 
+                       : Fux Private with in same class only  
+                       : Fun Default ??
+          - If child want to change any code of parent funx : Override
+           - overloading same function with diff signature(paramtrs)
+
+          - String equals : Value
+                   ==     : Reference 
+*************************************************************** ***********************************************************************
+9th 1.2  - function overloading and overriding
+
+        - selenium  1: 26
+
+
+
+
+Constructed overloading and overding  1:50
+
+System.set.property
+System - class of java (create obj of os)
+
+
+package demo;
+
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Amuu {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		System.setProperty("webdriver.chrome.driver", "D:\\JyotiDriver\\chromedriver.exe");
+                
+		ChromeDriver browser = new ChromeDriver();
+	}
+
+}
+
+
+
+****************************************************************************************************************************************
+
+9th 1.3  
+
+Parent child cancept for browser's use 
+
+30mins done 
+
+00:30 to 01:00 Waste
+
+***********************************************************************************************************************************
+10th
+
+selenium 
+****************************************************************************************************************************************
+11th
+
+11 scanner
+
+encapsulation 
+
+data hidding
+Locators
+select dropdown 
+
+Thread.sleep(5000);
+
+******************************
+
+12th
+
+breakpoint
+main start - > 33min 
+Action Class
+JavascriptExecutor jse = (JavascriptExecutor)browser;
+	jse.executeScript("arguments[0].scrollIntoView();", newlocator);
+
+
+TakeScreenshot
+
+                    TakesScreenshot tss = (TakesScreenshot)browser;
+		    File ScrFile = tss.getScreenshotAs(OutputType.FILE);
+		    File NewFile = new File("D:\\AutomationStudyVideo\\Gayu.png");
+		    //Thread.sleep(10000);
+		    Files.copy(ScrFile, NewFile);
+
+Alert 
+ To handle popup
+Alert alert = browser.swichTo().alert();
+alert.accept();
+
+Imlicitly wait 
+driver.manage().timeout().implicitlywait(5 , TimeUnit.SECONDS);
+Explicitly wait
+                    WebDriverWait wait = new WebDriverWait(browser, 5);
+		    wait.until(ExpectedConditions.alertIsPresent());
+
+**************************************************************************************************************************************
+13th
+window handle
+
+             String mainWindow =  browser.getWindowHandle(); //X
+             Set<String> allWindows =  browser.getWindowHandles();  //X, Y
+             String secondWindow = "";
+             
+             for(String currentId : allWindows ) {
+            	 if(!currentId.equals(mainWindow))
+            		 
+            	 secondWindow = currentId;
+             }
+             
+             browser.switchTo().window(secondWindow);
+
+
+
+FRAME
+
+browser.switchTo().frame("notification-frame-~10cb47553");
+
+
+40mins vedio only 
+
+*****************************************************************************************************************************************
+
+
+14th 
+
+abstraction encapsulation diff 15mins
+
+Robot class for right click and open in new tab 
+
+dynamic xpath 1:14
+String inputData = "2";
+String DataLocator = (//div[@class='dateInnerCell']/p[text())='" + inputDate + "'])[1]';
+WebElement fName = browser.findElement(By.xpath(dateXpath));
+
+New Tab by Javascript
+
+Window.open();
+
+Maven 
+File > Other > Maven project > Group id - package name , Artificts Id - Project name
+
+Maven is used to save manual download
+
+
+****************************************************************************************************************************************
+15th 
+45mins nothing 
+TestNG 1: 1 done
+BaseTest - @Befor @After
+XML file for update report
+default report > location > testout > emailable report
+Priority OR (dependsOnMethods = "locator") 1:44
+2hrs done 
+
+Datadriven frame work is good frame work  ->  1 test case to 100 data ke sath chalana hai 
+Try catch to take screenshot
+boolean isExist = true;
+		 		try {
+		 			WebElement locator = browser.findElement(By.xpath("//span[text()='Helo, sign in']"));
+			 		locator.click();
+		 		}catch(Exception e) {
+		 			isExist = false ;
+		 			TakesScreenshot Tss = (TakesScreenshot)browser;
+		 			 File  Scrfile = Tss.getScreenshotAs(OutputType.FILE);
+		               File NewFile = new File("C:\\Users\\jyoti.rawat\\eclipse-workspace\\MavenProject");  
+		               Files.copy(Scrfile  , NewFile );
+TestNG report did not allow to show screen shot
+****************************************************************************************************************
+16th
+Poi has 2 dependancies
+
+Data Driven 
+1. Parametritation
+47min done 
+Excel file 
+
+
+@DataProvider
+	 public Object[] locatorDataprovider() throws InvalidFormatException, IOException{
+		
+		File file = new File("D:\\Book1.xlsx");
+// 		FileInputStream excelFile = new FileInputStream(new File("D:\\FileS.xlsx"));
+// 		Workbook workbook = new XSSFWorkbook(excelFile);
+ 		XSSFWorkbook myExcel = new XSSFWorkbook(file);
+ 		XSSFSheet mySheet = myExcel.getSheet("Jyoti");
+ 		int NoOfRows = mySheet.getPhysicalNumberOfRows();
+ 		Object[] data = new Object[NoOfRows-1];
+ 		for(int i = 1 ; i<NoOfRows ;i++) {
+ 		Row row = mySheet.getRow(i);
+ 		Cell fNameColumn = row.getCell(0);
+ 	
+ 		
+ 		String fName = fNameColumn.getStringCellValue();
+ 		data[i-1]=fName;
+ 		
+ 		//System.out.println(fName);
+ 		}
+		 
+		 // Object[] data = new Object[NoOfRows];
+		 data[0]="Jyoti";
+		 data[0]="mobile";
+		 
+		 return data;
+	 }
+
+Extend Report-  53min start 
+****************************************************************************************************************************************************
+
+
+Github Last
+
+ 
+Github- is main server
+git - local server in every team menbers system
+
+
+git --version
+git --help clone
+git config --global --list
+1. Create user account(es user ka name github me show hota hai ki es user ne kiya hai ye update)
+git config --global user.name"Jyoti"
+git config --global user.email"jyotirawatynr93@gmail.com" 
+
+Create new folder 
+cd D:\Jyoti\Anshu
+
+cd /d (To move to d drive)
+cd Jyoti  
+cd Anshu
+
+create new file anshutest
+git status
+git add anshutest.txt
+git status
+git comite -m"message" anshutest.txt
+git status
+git push
+
+till 1:20 Github
+
+
+
+
+
+
+*********************************************************************************************************************
+How to run batch file in selenium 
+processbatch=runtime.getruntime.executable(batchFilePath);
+
+How to run selenium webdriver test from comandline
+java_classpath
+class name - hit the enter 
+
+Selenium webdriver exceptions
+No such element -> Not found element on webpage
+webdriver exeception
+Time out exception   - > when  a comand does not complite in expected time line 
+No alert present execption
+No such window execption 
+Stail element execption -> When element is present in dome but the element is not present on webpage
+
+Page object moudle
+Desing pattern 
+object repossitry for web ui element
+each webpage would have its own page class - page class contain all the web elemet of that page 
+
+How do scrolldown in selenium 
+
+ JavascriptExecutor jse = (JavascriptExecutor)browser;
+jse.executeScript("arguments[0].scrollIntoView()";,newlocator );
+
+Which file can be used as a data source for diff  frame work
+Property file
+.csv  text file , .XMl , excel file
+
+Listners in selenium
+TestNG , Webdriver
+
+How to move back and forth in selenium?
+driver.manage.back();
+driver.manage.URL("");
+
+How to takeScreenshot in selenium
+TakesScreenshot tss = (TakesScreenshot)browser;
+               File  Scrfile = tss.getScreenshotAs(OutputType.FILE);
+               File NewFile = new File("Location");  
+               Files.copy(Scrfile  , NewFile );
+
+List of testing type supported by selenium
+Functional , crossbowser , smoke , regression , sanity , UI testing, Integression
+
+Assersion in selenium (IMP)
+It is a verification point
+hard assert and soft assert
+Type - assert , verify , wait for
+
+Diff build faces in maven 
+6 - validate 
+compile
+test
+package
+install
+deploye
+
+How to handle keyboard and mouse action 
+Action class , Robert class
+
+
